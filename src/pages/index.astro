@@ -1,0 +1,52 @@
+---
+import calculateAge from "../helpers/calculateAge";
+import Layout from "../layouts/Layout.astro";
+import { dateOfBirth, isGingerPhotoEnabled } from "../config";
+
+const age = calculateAge(new Date(dateOfBirth));
+---
+
+<Layout>
+  <main>
+    <h2>Hello!</h2>
+
+    <p>My name is Gabriel, and this is my website.</p>
+
+    <p>
+      I'm a <span id="age">{age}</span> year old engineer, specialising in DevOps/SRE,
+      previously being a full time Developer. I have been extremely passionate about
+      IT my whole life. I also love computer hardware, system and server administration.
+    </p>
+
+    <p>
+      <span>Besides IT, I'm a</span>
+      {
+        isGingerPhotoEnabled ? (
+          <a href="https://gingerfoto.com">photographer</a>
+        ) : (
+          <span>photographer</span>
+        )
+      }
+      <span>and a huge fan of philosophy.</span>
+    </p>
+  </main>
+</Layout>
+
+<script>
+  import { dateOfBirth } from "../config";
+  import calculateAge from "../helpers/calculateAge";
+
+  const ageEl = document.querySelector<HTMLSpanElement>("span#age");
+  if (ageEl) {
+    ageEl.textContent = calculateAge(new Date(dateOfBirth)).toString();
+  }
+</script>
+
+<style>
+  main {
+    font-size: 1.25em;
+    justify-self: center;
+    max-width: 750px;
+    padding: 32px;
+  }
+</style>

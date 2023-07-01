@@ -1,0 +1,56 @@
+---
+import "normalize.css/normalize.css";
+import Header from "./layout/Header.astro";
+
+export interface Props {
+  pageTitle?: string;
+}
+
+const { pageTitle } = Astro.props;
+const title = pageTitle ? `${pageTitle} | nickelghost.com` : "nickelghost.com";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Gabriel Karczewski's personal website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:400,600,700,900"
+    />
+  </head>
+  <body>
+    <Header />
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --color-primary: #1a3a50;
+    --color-secondary: #93a5b0;
+    --color-accent: #fafafc;
+  }
+
+  body {
+    background: #fafafc;
+    color: #102533;
+    display: grid;
+    font-family: "Poppins", sans-serif;
+    grid-template-columns: 320px 1fr;
+    min-height: 100vh;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    font-weight: 600;
+  }
+
+  a {
+    color: hsl(204, 52%, 44%);
+  }
+</style>

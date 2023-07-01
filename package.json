@@ -1,0 +1,19 @@
+{
+  "name": "nickelghost-com",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@frontendista/astro-html-minify": "^1.0.7",
+    "astro": "^2.7.0"
+  },
+  "devDependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
