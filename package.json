@@ -10,7 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@frontendista/astro-html-minify": "^1.0.7",
     "astro": "^2.7.0"
   },
   "devDependencies": {
