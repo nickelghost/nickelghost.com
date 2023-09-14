@@ -1,0 +1,9 @@
+{
+  "name": "calculator",
+  "description": "A simple, responsive calculator written in React.",
+  "technologies": ["React"],
+  "links": [
+    { "name": "Demo", "url": "https://calculator.nickelghost.com" },
+    { "name": "Source", "url": "https://github.com/nickelghost/calculator" }
+  ]
+}

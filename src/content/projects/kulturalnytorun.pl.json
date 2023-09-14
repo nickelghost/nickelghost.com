@@ -1,0 +1,6 @@
+{
+  "name": "kulturalnytorun.pl",
+  "description": "A website about culture. Articles, events, artists and more!",
+  "technologies": ["React", "Vue", "Laravel", "MySQL"],
+  "links": [{ "name": "Website", "url": "https://kulturalnytorun.pl" }]
+}

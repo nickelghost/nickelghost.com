@@ -1,0 +1,5 @@
+{
+  "name": "pufferfish",
+  "description": "",
+  "technologies": ["aws", "Go", "Terraform", "Packer", "Ansible", "bash"]
+}
