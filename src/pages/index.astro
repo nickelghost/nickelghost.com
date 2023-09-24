@@ -7,29 +7,27 @@ const age = calculateAge(new Date(dateOfBirth));
 ---
 
 <Layout>
-  <main>
-    <h2>Hello!</h2>
+  <h2>Hello!</h2>
 
-    <p>My name is Gabriel, and this is my website.</p>
+  <p>My name is Gabriel, and this is my website.</p>
 
-    <p>
-      I'm a <span id="age">{age}</span> year old engineer, specialising in DevOps/SRE,
-      previously being a full time Developer. I have been extremely passionate about
-      IT my whole life. I also love computer hardware, system and server administration.
-    </p>
+  <p>
+    I'm a <span id="age">{age}</span> year old engineer, specialising in DevOps/SRE,
+    previously being a full time Developer. I have been extremely passionate about
+    IT my whole life. I also love computer hardware, system and server administration.
+  </p>
 
-    <p>
-      Besides IT, I'm a
-      {
-        isGingerPhotoEnabled ? (
-          <a href="https://gingerfoto.com">photographer</a>
-        ) : (
-          "photographer"
-        )
-      }
-      and a huge fan of philosophy.
-    </p>
-  </main>
+  <p>
+    Besides IT, I'm a
+    {
+      isGingerPhotoEnabled ? (
+        <a href="https://gingerfoto.com">photographer</a>
+      ) : (
+        "photographer"
+      )
+    }
+    and a huge fan of philosophy.
+  </p>
 </Layout>
 
 <script>
@@ -41,12 +39,3 @@ const age = calculateAge(new Date(dateOfBirth));
     ageEl.textContent = calculateAge(new Date(dateOfBirth)).toString();
   }
 </script>
-
-<style>
-  main {
-    font-size: 1.25em;
-    justify-self: center;
-    max-width: 750px;
-    padding: 32px;
-  }
-</style>

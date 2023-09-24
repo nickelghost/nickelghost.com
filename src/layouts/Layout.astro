@@ -25,7 +25,9 @@ const title = pageTitle ? `${pageTitle} | nickelghost.com` : "nickelghost.com";
   </head>
   <body>
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
 
@@ -41,8 +43,21 @@ const title = pageTitle ? `${pageTitle} | nickelghost.com` : "nickelghost.com";
     color: #102533;
     display: grid;
     font-family: "Poppins", sans-serif;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 320px 1fr minmax(min-content, 750px) 1fr;
     min-height: 100vh;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: #0e1f2b;
+      color: #bbd2df;
+    }
+  }
+
+  main {
+    font-size: 1.25em;
+    grid-column-start: 3;
+    padding: 32px;
   }
 
   h2 {
@@ -52,5 +67,15 @@ const title = pageTitle ? `${pageTitle} | nickelghost.com` : "nickelghost.com";
 
   a {
     color: hsl(204, 52%, 44%);
+  }
+
+  @media screen and (max-width: 800px) {
+    body {
+      grid-template-columns: 1fr;
+    }
+
+    main {
+      grid-column-start: 1;
+    }
   }
 </style>
