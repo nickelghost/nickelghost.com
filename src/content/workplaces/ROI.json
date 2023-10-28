@@ -1,7 +1,15 @@
 {
-  "company": "",
+  "companyName": "ROI Ltd",
   "title": "Application Developer",
-  "description": "",
+  "description": "I worked on large CMS systems written using ASP.NET Core and Node.js for the automotive industry backed by CRM systems. I was working with MSSQL and PostgreSQL relational database management systems. I also worked with Docker containers and AWS.",
+  "technologies": [
+    "C#",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "PostgreSQL",
+    "MSSQL"
+  ],
   "startDate": "2018-11",
   "endDate": "2019-04"
 }

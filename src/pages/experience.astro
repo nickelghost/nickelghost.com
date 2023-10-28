@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import calendarIcon from "./_experience/calendar-icon.svg";
+
+const workplaces = await getCollection("workplaces");
+---
+
+<Layout>
+  <h2>Projects</h2>
+
+  <ol>
+    {
+      workplaces.map(({ data: wp }) => (
+        <li>
+          <h3>
+            {wp.title} @ {wp.companyName}
+          </h3>
+
+          <ul>
+            {wp.technologies.map((t) => (
+              <li>{t}</li>
+            ))}
+          </ul>
+
+          <p>{wp.description}</p>
+
+          <div>
+            <img style="color:white;" src={calendarIcon} alt="Dates: " />
+            {wp.startDate} - {wp.endDate}
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</Layout>
