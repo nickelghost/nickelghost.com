@@ -7,7 +7,12 @@ export interface Props {
 }
 
 const { pageTitle } = Astro.props;
+
 const title = pageTitle ? `${pageTitle} | nickelghost.com` : "nickelghost.com";
+
+const fonts = [
+  "https://fonts.googleapis.com/css?family=Poppins:400,600,700,900",
+];
 ---
 
 <!DOCTYPE html>
@@ -17,11 +22,24 @@ const title = pageTitle ? `${pageTitle} | nickelghost.com` : "nickelghost.com";
     <meta name="description" content="Gabriel Karczewski's personal website" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+
     <title>{title}</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Poppins:400,600,700,900"
-    />
+
+    {
+      fonts.map((f) => (
+        <>
+          <link
+            rel="preload"
+            href={f}
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+          />
+          <noscript>
+            <link rel="stylesheet" href={f} />
+          </noscript>
+        </>
+      ))
+    }
   </head>
   <body>
     <Header />
@@ -47,7 +65,7 @@ const title = pageTitle ? `${pageTitle} | nickelghost.com` : "nickelghost.com";
     min-height: 100vh;
   }
 
-  @media (prefers-color-scheme: dark) {
+  @media screen and (prefers-color-scheme: dark) {
     body {
       background: #0e1f2b;
       color: #bbd2df;
@@ -67,6 +85,12 @@ const title = pageTitle ? `${pageTitle} | nickelghost.com` : "nickelghost.com";
 
   a {
     color: hsl(204, 52%, 44%);
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    a {
+      color: hsl(204, 52%, 60%);
+    }
   }
 
   @media screen and (max-width: 800px) {
