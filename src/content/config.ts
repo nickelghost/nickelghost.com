@@ -17,8 +17,8 @@ const workplaces = defineCollection({
     title: z.string(),
     description: z.string(),
     technologies: z.array(z.string()),
-    startDate: z.string().regex(/\d{4}-\d{2}/),
-    endDate: z.string().regex(/\d{4}-\d{2}/),
+    startDate: z.string().regex(/\d{2}.\d{4}/),
+    endDate: z.string().regex(/\d{2}.\d{4}/),
   }),
 });
 
