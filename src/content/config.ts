@@ -2,12 +2,15 @@ import { defineCollection, z } from "astro:content";
 
 const projects = defineCollection({
   type: "data",
-  schema: z.object({
-    name: z.string(),
-    description: z.string(),
-    technologies: z.array(z.string()),
-    links: z.array(z.object({ name: z.string(), url: z.string() })),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      image: image(),
+      imageAlt: z.string(),
+      description: z.string(),
+      technologies: z.array(z.string()),
+      links: z.array(z.object({ name: z.string(), url: z.string() })),
+    }),
 });
 
 const workplaces = defineCollection({

@@ -54,11 +54,19 @@ const fonts = [
     --color-primary: #1a3a50;
     --color-secondary: #93a5b0;
     --color-accent: #fafafc;
+    --color-text: #102533;
+    --color-text-secondary: #fafafc;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    :root {
+      --color-text: #fafafc;
+    }
   }
 
   body {
     background: #fafafc;
-    color: #102533;
+    color: var(--color-text);
     display: grid;
     font-family: "Poppins", sans-serif;
     grid-template-columns: 320px 1fr minmax(min-content, 750px) 1fr;
@@ -68,23 +76,34 @@ const fonts = [
   @media screen and (prefers-color-scheme: dark) {
     body {
       background: #0e1f2b;
-      color: #bbd2df;
     }
   }
 
   main {
-    font-size: 1.25em;
     grid-column-start: 3;
     padding: 32px;
+  }
+
+  main img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
   }
 
   h2 {
     font-size: 2.25rem;
     font-weight: 600;
+    margin-bottom: 36px;
   }
 
   a {
     color: hsl(204, 52%, 44%);
+  }
+
+  ul,
+  ol {
+    list-style-type: none;
+    padding: 0;
   }
 
   @media screen and (prefers-color-scheme: dark) {

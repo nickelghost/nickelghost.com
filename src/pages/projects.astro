@@ -11,20 +11,22 @@ const projects = await getCollection("projects");
   <ul>
     {
       projects.map(({ data: p }) => (
-        <li>
-          <h3>{p.name}</h3>
+        <li class="project">
+          <h3 class="name">{p.name}</h3>
 
-          <ul>
+          <img src={p.image.src} alt={p.imageAlt} />
+
+          <ul class="technologies">
             {p.technologies.map((t) => (
-              <li>{t}</li>
+              <li class="technology">{t}</li>
             ))}
           </ul>
 
-          <p>{p.description}</p>
+          {p.description && <p class="description">{p.description}</p>}
 
-          <ul>
+          <ul class="links">
             {p.links.map((l) => (
-              <li>
+              <li class="link">
                 <a href={l.url} target="_blank">
                   {l.name}
                 </a>
@@ -36,3 +38,75 @@ const projects = await getCollection("projects");
     }
   </ul>
 </Layout>
+
+<style>
+  .project {
+    border: 1px solid #ebebeb;
+    margin-bottom: 32px;
+  }
+
+  .name {
+    background: var(--color-primary);
+    color: var(--color-text-secondary);
+    font-size: 1.25rem;
+    margin: 0;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .technologies {
+    background: hsla(0, 0%, 100%, 0.025);
+    border-bottom: 1px solid #ebebeb;
+    display: flex;
+  }
+
+  .technology {
+    padding: 16px;
+  }
+
+  .description {
+    border-bottom: 1px solid #ebebeb;
+    display: block;
+    margin: 0;
+    padding: 24px;
+  }
+
+  .links {
+    align-content: stretch;
+    background: hsl(204, 52%, 18%);
+    display: flex;
+    gap: 1px;
+  }
+
+  .link {
+    background: hsl(204, 52%, 24%);
+    color: var(--color-text-secondary);
+    flex-grow: 1;
+    font-weight: 600;
+
+    > a {
+      color: inherit;
+      display: block;
+      padding: 16px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    > a:hover {
+      background: hsla(0, 0%, 100%, 0.025);
+      transition: 0.2s ease-in-out;
+    }
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    .link {
+      background: hsl(204, 52%, 11%);
+    }
+
+    .project,
+    .technologies,
+    .description {
+      border-color: hsl(204, 52%, 18%);
+    }
+  }
+</style>

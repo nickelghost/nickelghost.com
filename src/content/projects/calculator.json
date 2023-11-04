@@ -1,5 +1,7 @@
 {
   "name": "calculator",
+  "image": "./screenshot.png",
+  "imageAlt": "screenshot showing calculator working",
   "description": "A simple, responsive calculator written in React.",
   "technologies": ["React"],
   "links": [

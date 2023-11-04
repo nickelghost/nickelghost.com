@@ -1,5 +1,7 @@
 {
   "name": "kulturalnytorun.pl",
+  "image": "./screenshot.png",
+  "imageAlt": "",
   "description": "A website about culture. Articles, events, artists and more!",
   "technologies": ["React", "Vue", "Laravel", "MySQL"],
   "links": [{ "name": "Website", "url": "https://kulturalnytorun.pl" }]

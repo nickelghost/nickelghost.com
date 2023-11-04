@@ -1,6 +1,8 @@
 {
   "name": "pufferfish",
   "description": "",
+  "image": "./screenshot.png",
+  "imageAlt": "",
   "technologies": ["aws", "Go", "Terraform", "Packer", "Ansible", "bash"],
   "links": [
     { "name": "Source", "url": "https://github.com/nickelghost/pufferfish" }

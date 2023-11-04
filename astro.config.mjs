@@ -5,4 +5,7 @@ export default defineConfig({
     inlineStylesheets: "auto",
   },
   compressHTML: true,
+  experimental: {
+    assets: true,
+  },
 });
