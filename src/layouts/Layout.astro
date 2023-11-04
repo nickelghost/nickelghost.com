@@ -1,6 +1,7 @@
 ---
 import "normalize.css/normalize.css";
 import Header from "./layout/Header.astro";
+import GlobalStyles from "./layout/GlobalStyles.astro";
 
 export interface Props {
   pageTitle?: string;
@@ -38,6 +39,8 @@ const fonts = ["https://fonts.googleapis.com/css?family=Poppins:400,500,600"];
         </>
       ))
     }
+
+    <GlobalStyles />
   </head>
   <body>
     <Header />
@@ -46,78 +49,3 @@ const fonts = ["https://fonts.googleapis.com/css?family=Poppins:400,500,600"];
     </main>
   </body>
 </html>
-
-<style is:global>
-  :root {
-    --color-primary: hsl(204, 51%, 21%);
-    --color-light: hsl(240, 25%, 98%);
-    --color-dark: hsl(204, 51%, 11%);
-    --color-accent: hsl(0, 0%, 92%);
-    --color-accent-dark: hsl(204, 52%, 18%);
-    --color-text: var(--color-dark);
-    --color-text-secondary: var(--color-light);
-    --color-link: hsl(204, 52%, 44%);
-    --header-width: 320px;
-  }
-
-  @media screen and (prefers-color-scheme: dark) {
-    :root {
-      --color-primary: hsl(204, 51%, 18%);
-      --color-accent: var(--color-accent-dark);
-      --color-text: var(--color-light);
-      --color-link: hsl(204, 52%, 60%);
-    }
-  }
-
-  body {
-    background: var(--color-light);
-    color: var(--color-text);
-    display: grid;
-    font-family: "Poppins", sans-serif;
-    grid-template-columns: var(--header-width) 1fr minmax(min-content, 750px) 1fr;
-    min-height: 100vh;
-  }
-
-  @media screen and (prefers-color-scheme: dark) {
-    body {
-      background: var(--color-dark);
-    }
-  }
-
-  main {
-    grid-column-start: 3;
-    padding: 32px;
-  }
-
-  main img {
-    display: block;
-    object-fit: cover;
-    width: 100%;
-  }
-
-  h2 {
-    font-size: 2.25rem;
-    font-weight: 600;
-    margin-bottom: 36px;
-  }
-
-  a {
-    color: var(--color-link);
-  }
-
-  ul,
-  ol {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  @media screen and (max-width: 800px) {
-    body {
-      grid-template-columns: 1fr;
-    }
-
-    main {
-      grid-column-start: 1;
-    }
-  }
-</style>
