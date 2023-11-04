@@ -1,0 +1,73 @@
+---
+export interface Props {
+  headingText: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  technologies: string[];
+  description?: string;
+}
+
+const { headingText, imageSrc, imageAlt, technologies, description } =
+  Astro.props;
+---
+
+<li class="card">
+  <h3 class="heading">{headingText}</h3>
+
+  {imageSrc && <img class="image" src={imageSrc} alt={imageAlt} />}
+
+  <ul class="technologies">
+    {technologies.map((t) => <li class="technology">{t}</li>)}
+  </ul>
+
+  {description && <p class="description">{description}</p>}
+
+  <slot />
+</li>
+
+<style>
+  .card {
+    border: 1px solid var(--color-accent);
+    margin-bottom: 32px;
+  }
+
+  .heading {
+    background: var(--color-primary);
+    color: var(--color-text-secondary);
+    font-size: 1.25rem;
+    margin: 0;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .image {
+    aspect-ratio: 2 / 1;
+    border-bottom: 1px solid var(--color-accent);
+  }
+
+  .technologies {
+    background: hsla(0, 0%, 0%, 0.025);
+    border-bottom: 1px solid var(--color-accent);
+    display: flex;
+    font-weight: 500;
+    padding: 0 8px;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    .technologies {
+      background: hsla(0, 0%, 100%, 0.025);
+    }
+  }
+
+  .technology {
+    padding: 16px;
+  }
+
+  .description {
+    border-bottom: 1px solid var(--color-accent);
+    display: block;
+    line-height: 1.75;
+    margin: 0;
+    padding: 24px;
+  }
+</style>

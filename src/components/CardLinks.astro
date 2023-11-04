@@ -1,0 +1,54 @@
+---
+export interface Props {
+  links: { name: string; url: string }[];
+}
+
+const { links } = Astro.props;
+---
+
+<ul class="links">
+  {
+    links.map((l) => (
+      <li class="link">
+        <a href={l.url} target="_blank">
+          {l.name}
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .links {
+    align-content: stretch;
+    background: var(--color-accent-dark);
+    display: flex;
+    gap: 1px;
+  }
+
+  .link {
+    background: var(--color-primary);
+    color: var(--color-text-secondary);
+    flex-grow: 1;
+    font-weight: 600;
+
+    > a {
+      color: inherit;
+      display: block;
+      padding: 16px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    > a:hover {
+      background: hsla(0, 0%, 100%, 0.025);
+      transition: 0.2s ease-in-out;
+    }
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    .link {
+      background: hsl(204, 52%, 11%);
+    }
+  }
+</style>

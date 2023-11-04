@@ -1,5 +1,7 @@
 ---
 import { getCollection } from "astro:content";
+import Card from "../components/Card.astro";
+import CardLinks from "../components/CardLinks.astro";
 import Layout from "../layouts/Layout.astro";
 
 const projects = await getCollection("projects");
@@ -11,109 +13,18 @@ const projects = await getCollection("projects");
   <ul>
     {
       projects.map(({ data: p }) => (
-        <li class="project">
-          <h3 class="name">{p.name}</h3>
-
-          <img class="image" src={p.image.src} alt={p.imageAlt} />
-
-          <ul class="technologies">
-            {p.technologies.map((t) => (
-              <li class="technology">{t}</li>
-            ))}
-          </ul>
-
-          {p.description && <p class="description">{p.description}</p>}
-
-          <ul class="links">
-            {p.links.map((l) => (
-              <li class="link">
-                <a href={l.url} target="_blank">
-                  {l.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </li>
+        <>
+          <Card
+            headingText={p.name}
+            imageSrc={p.image.src}
+            imageAlt={p.imageAlt}
+            technologies={p.technologies}
+            description={p.description}
+          >
+            <CardLinks links={p.links} />
+          </Card>
+        </>
       ))
     }
   </ul>
 </Layout>
-
-<style>
-  .project {
-    border: 1px solid var(--color-accent);
-    margin-bottom: 32px;
-  }
-
-  .name {
-    background: var(--color-primary);
-    color: var(--color-text-secondary);
-    font-size: 1.25rem;
-    margin: 0;
-    padding: 24px;
-    text-align: center;
-  }
-
-  .image {
-    aspect-ratio: 2 / 1;
-    border-bottom: 1px solid var(--color-accent);
-  }
-
-  .technologies {
-    background: hsla(0, 0%, 0%, 0.025);
-    border-bottom: 1px solid var(--color-accent);
-    display: flex;
-    font-weight: 500;
-    padding: 0 8px;
-  }
-
-  @media screen and (prefers-color-scheme: dark) {
-    .technologies {
-      background: hsla(0, 0%, 100%, 0.025);
-    }
-  }
-
-  .technology {
-    padding: 16px;
-  }
-
-  .description {
-    border-bottom: 1px solid var(--color-accent);
-    display: block;
-    margin: 0;
-    padding: 24px;
-  }
-
-  .links {
-    align-content: stretch;
-    background: var(--color-accent-dark);
-    display: flex;
-    gap: 1px;
-  }
-
-  .link {
-    background: var(--color-primary);
-    color: var(--color-text-secondary);
-    flex-grow: 1;
-    font-weight: 600;
-
-    > a {
-      color: inherit;
-      display: block;
-      padding: 16px;
-      text-align: center;
-      text-decoration: none;
-    }
-
-    > a:hover {
-      background: hsla(0, 0%, 100%, 0.025);
-      transition: 0.2s ease-in-out;
-    }
-  }
-
-  @media screen and (prefers-color-scheme: dark) {
-    .link {
-      background: hsl(204, 52%, 11%);
-    }
-  }
-</style>
