@@ -49,23 +49,28 @@ const fonts = ["https://fonts.googleapis.com/css?family=Poppins:400,500,600"];
 
 <style is:global>
   :root {
-    --color-primary: #1a3a50;
-    --color-secondary: #93a5b0;
-    --color-accent: #ebebeb;
-    --color-text: #102533;
-    --color-text-secondary: #fafafc;
+    --color-primary: hsl(204, 51%, 21%);
+    --color-light: hsl(240, 25%, 98%);
+    --color-dark: hsl(204, 51%, 11%);
+    --color-accent: hsl(0, 0%, 92%);
+    --color-accent-dark: hsl(204, 52%, 18%);
+    --color-text: var(--color-dark);
+    --color-text-secondary: var(--color-light);
+    --color-link: hsl(204, 52%, 44%);
     --header-width: 320px;
   }
 
   @media screen and (prefers-color-scheme: dark) {
     :root {
-      --color-accent: hsl(204, 52%, 18%);
-      --color-text: #fafafc;
+      --color-primary: hsl(204, 51%, 18%);
+      --color-accent: var(--color-accent-dark);
+      --color-text: var(--color-light);
+      --color-link: hsl(204, 52%, 60%);
     }
   }
 
   body {
-    background: #fafafc;
+    background: var(--color-light);
     color: var(--color-text);
     display: grid;
     font-family: "Poppins", sans-serif;
@@ -75,7 +80,7 @@ const fonts = ["https://fonts.googleapis.com/css?family=Poppins:400,500,600"];
 
   @media screen and (prefers-color-scheme: dark) {
     body {
-      background: #0e1f2b;
+      background: var(--color-dark);
     }
   }
 
@@ -97,19 +102,13 @@ const fonts = ["https://fonts.googleapis.com/css?family=Poppins:400,500,600"];
   }
 
   a {
-    color: hsl(204, 52%, 44%);
+    color: var(--color-link);
   }
 
   ul,
   ol {
     list-style-type: none;
     padding: 0;
-  }
-
-  @media screen and (prefers-color-scheme: dark) {
-    a {
-      color: hsl(204, 52%, 60%);
-    }
   }
 
   @media screen and (max-width: 800px) {

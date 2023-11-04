@@ -80,7 +80,7 @@ const workplaces = await getCollection("workplaces");
   }
 
   .time-period {
-    background: hsl(204, 52%, 11%);
+    background: var(--color-primary);
     color: var(--color-text-secondary);
     font-size: 1.125rem;
     display: flex;
@@ -99,6 +99,12 @@ const workplaces = await getCollection("workplaces");
 
     > span {
       line-height: 1;
+    }
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    .time-period {
+      background: var(--color-dark);
     }
   }
 </style>
