@@ -12,25 +12,93 @@ const workplaces = await getCollection("workplaces");
   <ol>
     {
       workplaces.map(({ data: wp }) => (
-        <li>
-          <h3>
+        <li class="workplace">
+          <h3 class="title">
             {wp.title} @ {wp.companyName}
           </h3>
 
-          <ul>
+          <ul class="technologies">
             {wp.technologies.map((t) => (
-              <li>{t}</li>
+              <li class="technology">{t}</li>
             ))}
           </ul>
 
-          <p>{wp.description}</p>
+          <p class="description">{wp.description}</p>
 
-          <div>
-            <img style="color:white;" src={calendarIcon.src} alt="Dates: " />
-            {wp.startDate}-{wp.endDate}
+          <div class="time-period">
+            <img class="calendar-icon" src={calendarIcon.src} alt="Dates: " />
+            <span>
+              {wp.startDate}-{wp.endDate}
+            </span>
           </div>
         </li>
       ))
     }
   </ol>
 </Layout>
+
+<style>
+  .workplace {
+    border: 1px solid var(--color-accent);
+    margin-bottom: 32px;
+  }
+
+  .title {
+    background: var(--color-primary);
+    color: var(--color-text-secondary);
+    font-size: 1.25rem;
+    margin: 0;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .technologies {
+    background: hsla(0, 0%, 0%, 0.025);
+    border-bottom: 1px solid var(--color-accent);
+    display: flex;
+    font-weight: 500;
+    padding: 0 8px;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    .technologies {
+      background: hsla(0, 0%, 100%, 0.025);
+      padding: 0 8px;
+    }
+  }
+
+  .technology {
+    padding: 16px;
+  }
+
+  .description {
+    border-bottom: 1px solid var(--color-accent);
+    display: block;
+    line-height: 1.75;
+    margin: 0;
+    padding: 24px;
+  }
+
+  .time-period {
+    background: hsl(204, 52%, 11%);
+    color: var(--color-text-secondary);
+    font-size: 1.125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+
+    > img {
+      display: inline-block;
+      fill: var(--color-text-secondary);
+      height: 1.125em;
+      margin-right: 10px;
+      padding-bottom: 0.2em;
+      width: auto;
+    }
+
+    > span {
+      line-height: 1;
+    }
+  }
+</style>

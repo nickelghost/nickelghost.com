@@ -10,9 +10,7 @@ const { pageTitle } = Astro.props;
 
 const title = pageTitle ? `${pageTitle} | nickelghost.com` : "nickelghost.com";
 
-const fonts = [
-  "https://fonts.googleapis.com/css?family=Poppins:400,600,700,900",
-];
+const fonts = ["https://fonts.googleapis.com/css?family=Poppins:400,500,600"];
 ---
 
 <!DOCTYPE html>
@@ -53,7 +51,7 @@ const fonts = [
   :root {
     --color-primary: #1a3a50;
     --color-secondary: #93a5b0;
-    --color-accent: #fafafc;
+    --color-accent: #ebebeb;
     --color-text: #102533;
     --color-text-secondary: #fafafc;
     --header-width: 320px;
@@ -61,6 +59,7 @@ const fonts = [
 
   @media screen and (prefers-color-scheme: dark) {
     :root {
+      --color-accent: hsl(204, 52%, 18%);
       --color-text: #fafafc;
     }
   }

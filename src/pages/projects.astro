@@ -41,7 +41,7 @@ const projects = await getCollection("projects");
 
 <style>
   .project {
-    border: 1px solid #ebebeb;
+    border: 1px solid var(--color-accent);
     margin-bottom: 32px;
   }
 
@@ -56,12 +56,21 @@ const projects = await getCollection("projects");
 
   .image {
     aspect-ratio: 2 / 1;
+    border-bottom: 1px solid var(--color-accent);
   }
 
   .technologies {
-    background: hsla(0, 0%, 100%, 0.025);
-    border-bottom: 1px solid #ebebeb;
+    background: hsla(0, 0%, 0%, 0.025);
+    border-bottom: 1px solid var(--color-accent);
     display: flex;
+    font-weight: 500;
+    padding: 0 8px;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    .technologies {
+      background: hsla(0, 0%, 100%, 0.025);
+    }
   }
 
   .technology {
@@ -69,7 +78,7 @@ const projects = await getCollection("projects");
   }
 
   .description {
-    border-bottom: 1px solid #ebebeb;
+    border-bottom: 1px solid var(--color-accent);
     display: block;
     margin: 0;
     padding: 24px;
@@ -105,12 +114,6 @@ const projects = await getCollection("projects");
   @media screen and (prefers-color-scheme: dark) {
     .link {
       background: hsl(204, 52%, 11%);
-    }
-
-    .project,
-    .technologies,
-    .description {
-      border-color: hsl(204, 52%, 18%);
     }
   }
 </style>
