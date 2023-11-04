@@ -14,7 +14,7 @@ const projects = await getCollection("projects");
         <li class="project">
           <h3 class="name">{p.name}</h3>
 
-          <img src={p.image.src} alt={p.imageAlt} />
+          <img class="image" src={p.image.src} alt={p.imageAlt} />
 
           <ul class="technologies">
             {p.technologies.map((t) => (
@@ -52,6 +52,10 @@ const projects = await getCollection("projects");
     margin: 0;
     padding: 24px;
     text-align: center;
+  }
+
+  .image {
+    aspect-ratio: 2 / 1;
   }
 
   .technologies {
