@@ -4,6 +4,7 @@ const projects = defineCollection({
   type: "data",
   schema: ({ image }) =>
     z.object({
+      priority: z.number(),
       name: z.string(),
       image: image(),
       imageAlt: z.string(),
@@ -16,6 +17,7 @@ const projects = defineCollection({
 const workplaces = defineCollection({
   type: "data",
   schema: z.object({
+    priority: z.number(),
     companyName: z.string(),
     title: z.string(),
     description: z.string(),

@@ -12,15 +12,17 @@ const workplaces = await getCollection("workplaces");
 
   <ol>
     {
-      workplaces.map(({ data: wp }) => (
-        <Card
-          headingText={`${wp.title} @ ${wp.companyName}`}
-          technologies={wp.technologies}
-          description={wp.description}
-        >
-          <TimePeriod startDate={wp.startDate} endDate={wp.endDate} />
-        </Card>
-      ))
+      workplaces
+        .sort((a, b) => b.data.priority - a.data.priority)
+        .map(({ data: wp }) => (
+          <Card
+            headingText={`${wp.title} @ ${wp.companyName}`}
+            technologies={wp.technologies}
+            description={wp.description}
+          >
+            <TimePeriod startDate={wp.startDate} endDate={wp.endDate} />
+          </Card>
+        ))
     }
   </ol>
 </Layout>

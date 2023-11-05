@@ -12,19 +12,21 @@ const projects = await getCollection("projects");
 
   <ul>
     {
-      projects.map(({ data: p }) => (
-        <>
-          <Card
-            headingText={p.name}
-            imageSrc={p.image}
-            imageAlt={p.imageAlt}
-            technologies={p.technologies}
-            description={p.description}
-          >
-            <CardLinks links={p.links} />
-          </Card>
-        </>
-      ))
+      projects
+        .sort((a, b) => b.data.priority - a.data.priority)
+        .map(({ data: p }) => (
+          <>
+            <Card
+              headingText={p.name}
+              imageSrc={p.image}
+              imageAlt={p.imageAlt}
+              technologies={p.technologies}
+              description={p.description}
+            >
+              <CardLinks links={p.links} />
+            </Card>
+          </>
+        ))
     }
   </ul>
 </Layout>

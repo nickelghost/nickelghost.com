@@ -1,4 +1,5 @@
 {
+  "priority": 200,
   "name": "kulturalnytorun.pl",
   "image": "./screenshot.png",
   "imageAlt": "",

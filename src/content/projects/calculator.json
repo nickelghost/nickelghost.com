@@ -1,4 +1,5 @@
 {
+  "priority": 100,
   "name": "calculator",
   "image": "./screenshot.png",
   "imageAlt": "screenshot showing calculator working",

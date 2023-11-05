@@ -1,4 +1,5 @@
 {
+  "priority": 300,
   "name": "pufferfish",
   "description": "",
   "image": "./screenshot.png",
