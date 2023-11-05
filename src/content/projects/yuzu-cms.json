@@ -1,0 +1,9 @@
+{
+  "priority": 300,
+  "name": "Yuzu CMS",
+  "description": "An unfinished simple WordPress-like CMS.",
+  "technologies": ["Go", "JavaScript", "Svelte", "PostgreSQL"],
+  "links": [
+    { "name": "Source", "url": "https://github.com/nickelghost/yuzu-cms" }
+  ]
+}

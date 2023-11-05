@@ -1,9 +1,7 @@
 {
-  "priority": 300,
+  "priority": 500,
   "name": "pufferfish",
-  "description": "",
-  "image": "./screenshot.png",
-  "imageAlt": "",
+  "description": "A demo PoC app & infra for learning Packer, aws monitoring and improving Ansible skills.",
   "technologies": ["aws", "Go", "Terraform", "Packer", "Ansible", "bash"],
   "links": [
     { "name": "Source", "url": "https://github.com/nickelghost/pufferfish" }

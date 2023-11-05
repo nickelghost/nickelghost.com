@@ -6,8 +6,8 @@ const projects = defineCollection({
     z.object({
       priority: z.number(),
       name: z.string(),
-      image: image(),
-      imageAlt: z.string(),
+      image: image().optional(),
+      imageAlt: z.string().optional(),
       description: z.string(),
       technologies: z.array(z.string()),
       links: z.array(z.object({ name: z.string(), url: z.string() })),

@@ -1,0 +1,7 @@
+{
+  "priority": 400,
+  "name": "FinestIce",
+  "description": "A now defunct online store with men's jewellery.",
+  "technologies": ["TypeScript", "React", "Next.js", "Strapi"],
+  "links": []
+}

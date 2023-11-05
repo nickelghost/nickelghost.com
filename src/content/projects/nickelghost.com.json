@@ -1,0 +1,7 @@
+{
+  "priority": 600,
+  "name": "nickelghost.com",
+  "description": "You're looking at it right now!",
+  "technologies": ["TypeScript", "Astro"],
+  "links": []
+}

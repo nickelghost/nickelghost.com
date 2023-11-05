@@ -1,9 +1,9 @@
 {
   "priority": 200,
   "name": "kulturalnytorun.pl",
-  "image": "./screenshot.png",
-  "imageAlt": "",
-  "description": "A website about culture. Articles, events, artists and more!",
-  "technologies": ["React", "Vue", "Laravel", "MySQL"],
+  "image": "./kulturalnytorun.pl.png",
+  "imageAlt": "screenshot showing kulturalnytorun.pl",
+  "description": "A website about culture. Articles, event calendar, artists and more!",
+  "technologies": ["JavaScript", "React", "Vue", "PHP", "Laravel", "MySQL"],
   "links": [{ "name": "Website", "url": "https://kulturalnytorun.pl" }]
 }
