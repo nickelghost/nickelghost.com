@@ -16,7 +16,7 @@ const projects = await getCollection("projects");
         <>
           <Card
             headingText={p.name}
-            imageSrc={p.image.src}
+            imageSrc={p.image}
             imageAlt={p.imageAlt}
             technologies={p.technologies}
             description={p.description}

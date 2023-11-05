@@ -13,6 +13,7 @@
     "astro": "^3.4.3"
   },
   "devDependencies": {
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "sharp": "^0.32.6"
   }
 }

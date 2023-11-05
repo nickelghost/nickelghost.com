@@ -1,7 +1,9 @@
 ---
+import { Image } from "astro:assets";
+
 export interface Props {
   headingText: string;
-  imageSrc?: string;
+  imageSrc?: ImageMetadata;
   imageAlt?: string;
   technologies: string[];
   description?: string;
@@ -14,7 +16,18 @@ const { headingText, imageSrc, imageAlt, technologies, description } =
 <li class="card">
   <h3 class="heading">{headingText}</h3>
 
-  {imageSrc && <img class="image" src={imageSrc} alt={imageAlt} />}
+  {
+    imageSrc && (
+      <Image
+        class="image"
+        src={imageSrc}
+        alt={imageAlt || ""}
+        width={684}
+        height={342}
+        densities={[1, 1.5, 2]}
+      />
+    )
+  }
 
   <ul class="technologies">
     {technologies.map((t) => <li class="technology">{t}</li>)}
