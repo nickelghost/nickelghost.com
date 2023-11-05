@@ -40,6 +40,26 @@
     padding: 32px;
   }
 
+  @media screen and (max-width: 768px) {
+    body {
+      grid-template-columns: 1fr 576px 1fr;
+    }
+
+    main {
+      grid-column-start: 2;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    body {
+      grid-template-columns: 1fr;
+    }
+
+    main {
+      grid-column-start: 1;
+    }
+  }
+
   main img {
     display: block;
     object-fit: cover;
@@ -60,15 +80,5 @@
   ol {
     list-style-type: none;
     padding: 0;
-  }
-
-  @media screen and (max-width: 800px) {
-    body {
-      grid-template-columns: 1fr;
-    }
-
-    main {
-      grid-column-start: 1;
-    }
   }
 </style>
