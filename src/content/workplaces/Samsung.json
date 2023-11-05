@@ -1,0 +1,16 @@
+{
+  "priority": 500,
+  "companyName": "Samsung R&D Poland",
+  "title": "DevOps Engineer",
+  "description": "I worked on designing, developing and deploying observable tooling systems.",
+  "technologies": [
+    "aws",
+    "Kubernetes",
+    "GitHub Actions",
+    "Helm",
+    "Prometheus",
+    "Go"
+  ],
+  "startDate": "12.2022",
+  "endDate": "03.2023"
+}

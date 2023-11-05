@@ -1,0 +1,21 @@
+{
+  "priority": 400,
+  "companyName": "PvP House",
+  "title": "Web Development Lead",
+  "description": "I was designing and implementing cloud infrastructure and SOA services. Additionally, I worked on front-end apps and websites, as well as managed databases. I worked directly with clients, creating technical specifications, designing systems and creating PoCs. I led a 4-person team that consisted of a designer, two web developers and me.",
+  "technologies": [
+    "Terraform",
+    "Ansible",
+    "GitLab CI",
+    "Go",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "PostgreSQL",
+    "DigitalOcean",
+    "aws",
+    "Kubernetes"
+  ],
+  "startDate": "01.2021",
+  "endDate": "10.2022"
+}

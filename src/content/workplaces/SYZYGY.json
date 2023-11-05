@@ -1,0 +1,18 @@
+{
+  "priority": 300,
+  "companyName": "SYZYGY Poland",
+  "title": "DevOps Engineer",
+  "description": "I was responsible for container-based cloud infrastructure on AWS and CI/CD processes with Jenkins, GitLab CI and GitHub Actions. I was also supporting front-end and back-end teams with their technology concerns and automated testing. I also helped design back-end systems. I was also involved in recruitment and the enhancement of company culture and processes.",
+  "technologies": [
+    "aws",
+    "Docker",
+    "Terraform",
+    "Jenkins",
+    "GitHub Actions",
+    "Ansible",
+    "Go",
+    "Node.js"
+  ],
+  "startDate": "05.2019",
+  "endDate": "08.2020"
+}

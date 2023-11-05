@@ -1,0 +1,16 @@
+{
+  "priority": 100,
+  "companyName": "Toruńska Agenda Kulturalna",
+  "title": "Programmer",
+  "description": "My task was to create and deploy the kulturalnytorun.pl site. The project was based on both SSR and CSR+API web development paradigms.",
+  "technologies": [
+    "JavaScript",
+    "React",
+    "Vue",
+    "PHP",
+    "Laravel",
+    "PostgreSQL"
+  ],
+  "startDate": "11.2017",
+  "endDate": "01.2018"
+}
