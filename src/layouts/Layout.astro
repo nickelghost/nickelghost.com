@@ -1,8 +1,9 @@
 ---
-import "normalize.css/normalize.css";
-import Header from "./layout/Header.astro";
-import GlobalStyles from "./layout/GlobalStyles.astro";
 import { ViewTransitions } from "astro:transitions";
+import "normalize.css/normalize.css";
+import Fonts from "./layout/Fonts.astro";
+import GlobalStyles from "./layout/GlobalStyles.astro";
+import Header from "./layout/Header.astro";
 
 export interface Props {
   pageTitle?: string;
@@ -11,10 +12,6 @@ export interface Props {
 const { pageTitle } = Astro.props;
 
 const title = pageTitle ? `${pageTitle} | nickelghost.com` : "nickelghost.com";
-
-const fonts = [
-  "https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap",
-];
 ---
 
 <!DOCTYPE html>
@@ -27,22 +24,11 @@ const fonts = [
 
     <title>{title}</title>
 
-    {
-      fonts.map((f) => (
-        <>
-          <link
-            rel="preload"
-            href={f}
-            as="style"
-            onload="this.onload=null;this.rel='stylesheet'"
-            transition:persist
-          />
-          <noscript>
-            <link rel="stylesheet" href={f} />
-          </noscript>
-        </>
-      ))
-    }
+    <Fonts
+      urls={[
+        "https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap",
+      ]}
+    />
 
     <GlobalStyles />
 
