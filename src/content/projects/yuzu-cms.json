@@ -1,6 +1,8 @@
 {
   "priority": 300,
   "name": "Yuzu CMS",
+  "image": "./yuzu-cms.png",
+  "imageAlt": "screenshot showing Yuzu CMS",
   "description": "An unfinished simple WordPress-like CMS.",
   "technologies": ["Go", "JavaScript", "Svelte", "PostgreSQL"],
   "links": [
