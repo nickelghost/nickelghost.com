@@ -20,6 +20,7 @@ const title = pageTitle ? `${pageTitle} | nickelghost.com` : "nickelghost.com";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="built-at" content={new Date().toISOString()} />
 
     <meta name="description" content="Gabriel Karczewski's personal website" />
     <meta name="og:title" content="Gabriel Karczewski's personal website" />
