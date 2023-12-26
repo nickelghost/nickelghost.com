@@ -1,40 +1,38 @@
 ---
 import calculateAge from "../helpers/calculateAge";
 import Layout from "../layouts/Layout.astro";
-import { dateOfBirth, isGingerPhotoEnabled } from "../config";
+import homepage from '../content-static/homepage.json';
 
-const age = calculateAge(new Date(dateOfBirth));
+const age = calculateAge(new Date(homepage.dateOfBirth));
 ---
 
 <Layout>
-  <h2>Hello!</h2>
+  <h2>{homepage.heading}</h2>
 
-  <p>My name is Gabriel, and this is my website.</p>
+  <p>{homepage.paragraph1[0]} website.</p>
 
   <p>
-    I'm a <span id="age">{age}</span> year old engineer, specialising in DevOps/SRE,
-    previously being a full time Developer. I have been extremely passionate about
-    IT my whole life. I also love computer hardware, system and server administration.
+    {homepage.paragraph2[0]+' '}<span id="age">{age}</span>{' '+homepage.paragraph2[1]}
   </p>
 
   <p>
-    Besides IT, I'm a
+    {homepage.paragraph3[0]+' '}
     {
-      isGingerPhotoEnabled ? (
+      homepage.isGingerFotoEnabled ? (
         <a href="https://gingerfoto.com" target="_blank">
-          photographer
+          {homepage.paragraph3[1]}
         </a>
       ) : (
-        "photographer"
+        homepage.paragraph3[1]
       )
     }
-    and a huge fan of philosophy.
+    {' '+homepage.paragraph3[2]}
   </p>
 </Layout>
 
 <script>
-  import { dateOfBirth } from "../config";
-  import calculateAge from "../helpers/calculateAge";
+  import { dateOfBirth } from '../content-static/homepage.json';
+import calculateAge from "../helpers/calculateAge";
 
   const ageEl = document.querySelector<HTMLSpanElement>("span#age");
   if (ageEl) {

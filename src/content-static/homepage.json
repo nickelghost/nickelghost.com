@@ -1,0 +1,15 @@
+{
+  "heading": "Hello!",
+  "paragraph1": ["My name is Gabriel, and this is my"],
+  "paragraph2": [
+    "I'm a",
+    "year old engineer, specialising in DevOps/SRE, previously being a full time Developer. I have been extremely passionate about IT my whole life. I also love computer hardware, system and server administration."
+  ],
+  "paragraph3": [
+    "Besides IT, I'm a",
+    "photographer",
+    "and a huge fan of philosophy."
+  ],
+  "dateOfBirth": "1999-07-03",
+  "isGingerFotoEnabled": false
+}
