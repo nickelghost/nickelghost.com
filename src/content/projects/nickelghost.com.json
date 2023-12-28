@@ -1,7 +1,12 @@
 {
   "priority": 600,
   "name": "nickelghost.com",
-  "description": "You're looking at it right now!",
+  "description": "A portfolio/CV website about me, my projects and my experience.",
   "technologies": ["TypeScript", "Astro"],
-  "links": []
+  "links": [
+    {
+      "name": "Source",
+      "url": "https://github.com/nickelghost/nickelghost.com"
+    }
+  ]
 }
