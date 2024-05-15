@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import avatarImg from "./header/avatar.jpeg";
 import menuImg from "./header/menu.svg";
+import Links from "./header/Links.astro";
 ---
 
 <header>
@@ -21,17 +22,22 @@ import menuImg from "./header/menu.svg";
     >
   </div>
   <nav>
-    <a href="/">About me</a>
-    <a href="/projects">Projects</a>
-    <a href="/experience">Experience</a>
-    <a href="https://github.com/nickelghost" target="_blank">GitHub</a>
+    <Links />
   </nav>
+  <noscript>
+    <nav class="nav-mobile-fallback">
+      <Links />
+    </nav>
+  </noscript>
 </header>
 
 <script>
   const navVisibleClass = "nav-mobile-visible";
 
-  document.querySelector("#hamburger")?.addEventListener("click", (e) => {
+  document.querySelector("#hamburger")?.
+    classList.add("hamburger-visible")
+
+  document.querySelector("#hamburger")?.addEventListener("click", () => {
     const nav = document.querySelector("nav");
     if (nav?.classList.contains(navVisibleClass)) {
       nav?.classList.remove(navVisibleClass);
@@ -76,25 +82,14 @@ import menuImg from "./header/menu.svg";
     display: none;
   }
 
-  nav a {
-    background: color-mix(in srgb, var(--color-primary), black 25%);
-    color: inherit;
-    display: block;
-    font-weight: 600;
-    padding: 16px;
-    text-align: center;
-    text-decoration: none;
-  }
-
-  nav a:hover {
-    background: color-mix(in srgb, var(--color-primary), black 15%);
-    transition: var(--transition);
-  }
-
   .nav-mobile-visible {
     opacity: 1;
     transition: var(--transition);
     visibility: visible;
+  }
+
+  .nav-mobile-fallback {
+    display: none;
   }
 
   @media screen and (max-width: 768px) {
@@ -129,7 +124,6 @@ import menuImg from "./header/menu.svg";
       aspect-ratio: 1;
       background: none;
       border: none;
-      display: block;
       height: 1.75rem;
       padding: 0;
 
@@ -139,11 +133,22 @@ import menuImg from "./header/menu.svg";
       }
     }
 
+    .hamburger-visible {
+      display: block;
+    }
+
     nav {
       opacity: 0;
       position: absolute;
       visibility: hidden;
       width: 100%;
+    }
+
+    .nav-mobile-fallback {
+      display: block;
+      opacity: 1;
+      position: static;
+      visibility: visible;
     }
   }
 </style>
