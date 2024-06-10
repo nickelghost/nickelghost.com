@@ -1,6 +1,8 @@
 {
   "priority": 600,
   "name": "nickelghost.com",
+  "image": "./nickelghost.com.png",
+  "imageAlt": "screenshot showing nickelghost.com",
   "description": "A portfolio/CV website about me, my projects and my experience.",
   "technologies": ["TypeScript", "Astro"],
   "links": [
