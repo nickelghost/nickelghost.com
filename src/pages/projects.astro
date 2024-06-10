@@ -23,7 +23,7 @@ const projects = await getCollection("projects");
               technologies={p.technologies}
               description={p.description}
             >
-              <CardLinks links={p.links} />
+              {p.links.length > 0 && <CardLinks links={p.links} />}
             </Card>
           </>
         ))

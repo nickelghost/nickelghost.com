@@ -61,11 +61,14 @@ const { headingText, imageSrc, imageAlt, technologies, description } =
 
   .technologies {
     background: hsla(0, 0%, 0%, 0.025);
-    border-bottom: 1px solid var(--color-accent);
     display: flex;
     flex-wrap: wrap;
     font-weight: 500;
     padding: 0 8px;
+  }
+
+  .technologies:not(:last-child) {
+    border-bottom: 1px solid var(--color-accent);
   }
 
   @media screen and (prefers-color-scheme: dark) {
@@ -79,10 +82,13 @@ const { headingText, imageSrc, imageAlt, technologies, description } =
   }
 
   .description {
-    border-bottom: 1px solid var(--color-accent);
     display: block;
     line-height: 1.75;
     margin: 0;
     padding: 24px;
+  }
+
+  .description:not(:last-child) {
+    border-bottom: 1px solid var(--color-accent);
   }
 </style>
