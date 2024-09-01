@@ -1,0 +1,14 @@
+{
+  "priority": 650,
+  "name": "nickelghost.com-ios",
+  "image": "./nickelghost.com-ios.png",
+  "imageAlt": "screenshot showing nickelghost.com iOS app",
+  "description": "My personal website remade as an iOS app.",
+  "technologies": ["Swift", "SwiftUI"],
+  "links": [
+    {
+      "name": "Source",
+      "url": "https://github.com/nickelghost/nickelghost.com-ios"
+    }
+  ]
+}
