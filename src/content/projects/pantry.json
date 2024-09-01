@@ -7,8 +7,12 @@
   "technologies": ["Go", "Firebase", "Google Cloud", "TypeScript", "Svelte"],
   "links": [
     {
-      "name": "Source",
-      "url": "https://github.com/nickelghost/pantry"
+      "name": "API Source",
+      "url": "https://github.com/nickelghost/pantry-api"
+    },
+    {
+      "name": "Web Source",
+      "url": "https://github.com/nickelghost/pantry-web"
     }
   ]
 }
