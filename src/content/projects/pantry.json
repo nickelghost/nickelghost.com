@@ -1,0 +1,14 @@
+{
+  "priority": 700,
+  "name": "pantry",
+  "image": "./pantry.png",
+  "imageAlt": "screenshot showing pantry",
+  "description": "Web application for home grocery management.",
+  "technologies": ["Go", "Firebase", "Google Cloud", "TypeScript", "Svelte"],
+  "links": [
+    {
+      "name": "Source",
+      "url": "https://github.com/nickelghost/pantry"
+    }
+  ]
+}
