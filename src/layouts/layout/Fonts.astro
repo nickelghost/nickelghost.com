@@ -8,11 +8,11 @@ const { urls } = Astro.props;
 
 <>
   {
-    urls.map((f) => (
+    urls.map((u) => (
       <>
-        <link rel="preload" href={f} as="style" transition:persist />
+        <link rel="preload" href={u} as="style" transition:persist />
         <noscript>
-          <link rel="stylesheet" href={f} />
+          <link rel="stylesheet" href={u} />
         </noscript>
       </>
     ))
