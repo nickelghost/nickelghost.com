@@ -2,22 +2,18 @@
 export interface Props {
   urls: string[];
 }
-
-const { urls } = Astro.props;
 ---
 
-<>
-  {
-    urls.map((u) => (
-      <>
-        <link rel="preload" href={u} as="style" transition:persist />
-        <noscript>
-          <link rel="stylesheet" href={u} />
-        </noscript>
-      </>
-    ))
-  }
-</>
+{
+  Astro.props.urls.map((u) => (
+    <>
+      <link rel="preload" href={u} as="style" transition:persist />
+      <noscript>
+        <link rel="stylesheet" href={u} />
+      </noscript>
+    </>
+  ))
+}
 
 <script>
   const links = document.querySelectorAll<HTMLLinkElement>("link[rel=preload]");
