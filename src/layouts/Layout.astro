@@ -4,7 +4,7 @@ import "normalize.css/normalize.css";
 import Fonts from "./layout/Fonts.astro";
 import GlobalStyles from "./layout/GlobalStyles.astro";
 import Header from "./layout/Header.astro";
-import ogImage from './layout/og-image.png';
+import ogImage from "./layout/og-image.png";
 export interface Props {
   pageTitle?: string;
 }
@@ -14,7 +14,7 @@ const { pageTitle } = Astro.props;
 const title = pageTitle ? `${pageTitle} | nickelghost.com` : "nickelghost.com";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
