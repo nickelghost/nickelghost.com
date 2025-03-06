@@ -1,0 +1,19 @@
+{
+  "priority": 600,
+  "companyName": "Żabka",
+  "title": "Senior DevOps Engineer - Cloud Development Lead",
+  "description": "I take care of all aspects of the cloud infrastructure. I'm also responsible for developing and maintaining custom tooling and infrastructural services.",
+  "technologies": [
+    "Terraform",
+    "Kubernetes",
+    "GitLab CI",
+    "Google Cloud",
+    "Go",
+    "Node.js",
+    "Prometheus/Mimir",
+    "Loki",
+    "Tempo"
+  ],
+  "startDate": "04.2023",
+  "endDate": "currently"
+}
