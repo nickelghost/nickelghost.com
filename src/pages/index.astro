@@ -36,6 +36,7 @@ const age = calculateAge(new Date(homepage.dateOfBirth));
   import { dateOfBirth } from "../content-static/homepage.json";
   import calculateAge from "../helpers/calculateAge";
 
+  // update the age dynamically on page load, this ensures it stays accurate without needing to redeploy the site
   const ageEl = document.querySelector<HTMLSpanElement>("span#age");
   if (ageEl) {
     ageEl.textContent = calculateAge(new Date(dateOfBirth)).toString();
