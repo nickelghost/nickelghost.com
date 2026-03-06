@@ -15,7 +15,7 @@ export async function GET() {
               src: "https://nickelghost.com" + p.image.src,
             },
           }
-        : p
+        : p,
     )
     .map((p) =>
       p.name === "nickelghost.com"
@@ -29,7 +29,7 @@ export async function GET() {
               ...p.links,
             ],
           }
-        : p
+        : p,
     );
 
   return new Response(JSON.stringify(processedProjects), {

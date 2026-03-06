@@ -1,7 +1,7 @@
 ---
 import calculateAge from "../helpers/calculateAge";
 import Layout from "../layouts/Layout.astro";
-import homepage from '../content-static/homepage.json';
+import homepage from "../content-static/homepage.json";
 
 const age = calculateAge(new Date(homepage.dateOfBirth));
 ---
@@ -12,11 +12,13 @@ const age = calculateAge(new Date(homepage.dateOfBirth));
   <p>{homepage.paragraph1[0]} website.</p>
 
   <p>
-    {homepage.paragraph2[0]+' '}<span id="age">{age}</span>{' '+homepage.paragraph2[1]}
+    {homepage.paragraph2[0] + " "}<span id="age">{age}</span>{
+      " " + homepage.paragraph2[1]
+    }
   </p>
 
   <p>
-    {homepage.paragraph3[0]+' '}
+    {homepage.paragraph3[0] + " "}
     {
       homepage.isGingerFotoEnabled ? (
         <a href="https://gingerfoto.com" target="_blank">
@@ -26,12 +28,12 @@ const age = calculateAge(new Date(homepage.dateOfBirth));
         homepage.paragraph3[1]
       )
     }
-    {' '+homepage.paragraph3[2]}
+    {" " + homepage.paragraph3[2]}
   </p>
 </Layout>
 
 <script>
-  import { dateOfBirth } from '../content-static/homepage.json';
+  import { dateOfBirth } from "../content-static/homepage.json";
   import calculateAge from "../helpers/calculateAge";
 
   const ageEl = document.querySelector<HTMLSpanElement>("span#age");
