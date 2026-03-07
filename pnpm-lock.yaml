@@ -58,7 +58,6 @@ importers:
       astro:
         specifier: '>=5.15.8'
         version: 5.17.1(@types/node@24.7.0)(rollup@4.52.4)(typescript@5.9.3)
-    devDependencies:
       normalize.css:
         specifier: ^8.0.1
         version: 8.0.1

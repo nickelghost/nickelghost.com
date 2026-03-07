@@ -10,9 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.0.7"
-  },
-  "devDependencies": {
+    "astro": "^4.0.7",
     "normalize.css": "^8.0.1",
     "sharp": "^0.32.6"
   },
