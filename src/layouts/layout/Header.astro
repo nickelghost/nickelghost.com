@@ -18,11 +18,16 @@ import Links from "./header/Links.astro";
       />
       <h1>Gabriel Karczewski</h1>
     </div>
-    <button id="hamburger" class="hamburger"
-      ><img alt="menu icon" src={menuImg.src} /></button
+    <button
+      id="hamburger"
+      class="hamburger"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
     >
+      <img alt="menu icon" src={menuImg.src} />
+    </button>
   </div>
-  <nav>
+  <nav aria-label="Primary site navigation">
     <Links />
   </nav>
   <noscript>
@@ -35,15 +40,20 @@ import Links from "./header/Links.astro";
 <script>
   const navVisibleClass = "nav-mobile-visible";
 
-  document.querySelector("#hamburger")?.classList.add("hamburger-visible");
+  const hamburger = document.querySelector<HTMLButtonElement>("#hamburger");
 
-  document.querySelector("#hamburger")?.addEventListener("click", () => {
+  hamburger?.classList.add("hamburger-visible");
+  hamburger?.addEventListener("click", () => {
     const nav = document.querySelector("nav");
-    if (nav?.classList.contains(navVisibleClass)) {
+    const isExpanded = nav?.classList.contains(navVisibleClass);
+
+    if (isExpanded) {
       nav?.classList.remove(navVisibleClass);
     } else {
       nav?.classList.add(navVisibleClass);
     }
+
+    hamburger.setAttribute("aria-expanded", String(!isExpanded));
   });
 </script>
 
