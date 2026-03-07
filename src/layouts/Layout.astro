@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import "normalize.css/normalize.css";
 import GlobalStyles from "./layout/GlobalStyles.astro";
 import Header from "./layout/Header.astro";
@@ -38,7 +38,7 @@ const title = pageTitle ? `${pageTitle} | nickelghost.com` : "nickelghost.com";
 
     <GlobalStyles />
 
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body>
     <Header />
