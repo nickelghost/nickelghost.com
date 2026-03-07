@@ -1,7 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import "normalize.css/normalize.css";
-import Fonts from "./layout/Fonts.astro";
 import GlobalStyles from "./layout/GlobalStyles.astro";
 import Header from "./layout/Header.astro";
 import ogImage from "./layout/og-image.png";
@@ -30,10 +29,11 @@ const title = pageTitle ? `${pageTitle} | nickelghost.com` : "nickelghost.com";
 
     <title>{title}</title>
 
-    <Fonts
-      urls={[
-        "https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap",
-      ]}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
     />
 
     <GlobalStyles />
