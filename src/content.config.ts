@@ -1,9 +1,11 @@
-import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
+import { defineCollection } from "astro:content";
 
 const monthRegex = /^(0[1-9]|1[0-2])\.\d{4}$/;
 
 const projects = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/*.json", base: "./src/content/projects" }),
   schema: ({ image }) =>
     z.object({
       priority: z.number(),
@@ -17,7 +19,7 @@ const projects = defineCollection({
 });
 
 const workplaces = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/*.json", base: "./src/content/workplaces" }),
   schema: z.object({
     priority: z.number(),
     companyName: z.string(),
