@@ -7,13 +7,15 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04
-    container: node:20-alpine
+    runs-on: ubuntu-24.04
+    container: node:24-alpine
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Install pnpm
-        run: npm i -g pnpm@9
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
       - name: Build the site
